@@ -107,26 +107,6 @@ Precipitation = pd.DataFrame(list_results)
 Precipitation.describe()
 ```
 
-* Ascertaining impact of precipitation data
-
-Warm weather is a key element to the success of a Surf and Shake concept, but we also need to determine the impact of rainfall at a location. We can determine the precipitation statistics for a specific month using the following code;
-
-```
-#Query that filters the Measurement table to retrieve the precipitation for a specific month
-results = session.query(Measurement.date, Measurement.prcp).filter(extract ("month", Measurement.date) == no. of month.all()
-print(results)
-
-#Convert the precipitation to a list.
-list_results = [tup[1] for tup in results]
-print(list_results)
-
-#Create a DataFrame from the list of precipitation for the month
-Precipitation = pd.DataFrame(list_results)
-
-#Calculate and print out the summary statistics 
-Precipitation.describe()
-```
-
 Given the database containing has only temperature and precipitation data, we can conclude our analysis by reviewing the summary statistics for each weather variable.
 
 We can determine the database columns by using the following code to ascertain the first row of data;
